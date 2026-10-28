@@ -25,7 +25,12 @@ resources:
         - task_key: notebook_task
           notebook_task:
             notebook_path: ../src/bakehouse_notebook.ipynb
-
+        - task_key: transaction_summary
+          depends_on:
+            - task_key: notebook_task
+          notebook_task:
+            notebook_path: ../src/transactions_summary
+    
       environments:
         - environment_key: default
           spec:
